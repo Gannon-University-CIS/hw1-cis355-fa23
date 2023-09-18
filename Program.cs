@@ -14,8 +14,7 @@ builder.Services.AddSwaggerGen(c => {
 // use that same instance every time the service is needed. This way, you don't have to manually
 // create a new BookService each time you need to use it; the system will automatically give you
 // the one it has created. This is a technique called "Dependency Injection."
-builder.Services.AddSingleton<BookService>();
-
+builder.Services.AddSingleton<IBooksService, BookService>();
 
 var app = builder.Build();
 
